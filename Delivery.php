@@ -44,23 +44,34 @@ class Delivery
             return $this->addressValidator->getErrors();
         }
 
-        return true;
+        $this->setStreetNumber($streetNumber);
+        $this->setStreetName($streetName);
+        $this->setCity($city);
+        $this->setCountry($country);
     }
 
     public function setFullDeliveryAddress($address){
 
     }
 
-    public function setStreetNumber($streetNumber){}
+    public function setStreetNumber($streetNumber){
+        $this->streetNumber = $streetNumber;
+    }
 
-    public function setStreetName($streetName){}
+    public function setStreetName($streetName){
+        $this->streetName = $streetName;
+    }
 
-    public function setCity($city){}
+    public function setCity($city){
+        $this->city = $city;
+    }
 
-    public function setState($state){}
+    public function setState($state){
+        $this->state = $state;
+    }
 
     public function setCountry($country){
-
+        $this->country = $country;
     }
 
     private function validateAddress($params = array()){}
