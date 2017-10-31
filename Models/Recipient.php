@@ -6,19 +6,23 @@
  * Time: 7:25 AM
  */
 
-namespace Tribaxy\Users;
+namespace Tribaxy\Models;
 
 
-class DeliveryTarget
+use Tribaxy\Validators\RecipientValidator;
+
+class Recipient
 {
     private $firstName;
     private $lastName;
     private $phoneNumber;
     private $alternatePhoneNumber;
     private $address;
+    private $recipientValidator;
 
     public function __construct($param = array())
     {
+        $this->recipientValidator = new RecipientValidator();
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->phoneNumber = $phoneNumber;
